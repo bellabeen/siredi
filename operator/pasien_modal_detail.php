@@ -24,7 +24,9 @@ while($pasien = mysqli_fetch_array($querypasien)){
 			  format: 'YYYY-MM-DD'
 		  });
       });
-    </script>
+		</script>
+		
+		
 	<!-- Modal Popup Pasien Detail -->
 		<div id="ModalDetailPasien" class="modal fade" tabindex="-1" role="dialog"></div>
 

@@ -1,11 +1,11 @@
-  <?php
+<?php
 include "../include/connect.php";
 include "../include/session.php"; 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>User | RekamMedis</title>
+<title>Record | RekamMedis</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -109,13 +109,11 @@ include "../include/session.php";
             </div>
           </div>
           <!-- sidebar menu: : style can be found in sidebar.less -->
-          <ul class="sidebar-menu">
-					<li class="header"><h4><b><center>Manajemen Users</center></b></h4></li>
+          <ul class="sidebar-menu">					
+						<li class="header"><h4><b><center>Manajemen RekamMedis</center></b></h4></li>
             <li class="active"><a href="home.php"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
-            <li><a href="users.php"><i class="fa fa-users"></i><span>User</span></a></li>
             <li><a href="rm.php"><i class="fa fa-file-pdf-o"></i><span>RekamMedis</span></a></li>
             <li><a href="obat.php"><i class="fa fa-list-ul"></i><span>Data Obat</span></a></li>
-            <li><a href="dokter.php"><i class="fa fa-medkit"></i><span>Dokter</span></a></li>
           </ul>
         </section>
     <!-- /.sidebar -->
@@ -125,7 +123,7 @@ include "../include/session.php";
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Data Users
+            Data Record
           </h1>
           
         </section>
@@ -139,11 +137,11 @@ include "../include/session.php";
 
                 </div><!-- /.box-header -->
                 <div class="box-body">
-				<a href="#"><button class="btn btn-success" type="button" data-target="#ModalAdd" data-toggle="modal"><i class="fa fa-plus"></i> Add</button></a>
+				<!-- <button href="#"><button class="btn btn-success" type="button" data-target="#ModalAdd" data-toggle="modal"><i class="fa fa-plus"></i> Add</button></a> -->
                   <br></br>
 				  <table id="data" class="table table-bordered table-striped table-scalable">
 						<?php
-							include "detail_users.php";
+							include "detail_pasien.php";
 						?>
                   </table>
                 </div><!-- /.box-body -->
@@ -236,10 +234,6 @@ include "../include/session.php";
 
 	</div><!-- ./wrapper -->
 
-
-	
-
-	
 		<!-- Javascript Edit--> 
 		<script type="text/javascript">
 		$(document).ready(function () {
@@ -258,89 +252,12 @@ include "../include/session.php";
 				});
 			});
 		
-		// Mahasiswa
-		$(".open_modal").click(function(e) {
-			var m = $(this).attr("id");
-				$.ajax({
-					url: "training_modal_edit.php",
-					type: "GET",
-					data : {no_tri: m,},
-					success: function (ajaxData){
-					$("#ModalEditTraining").html(ajaxData);
-					$("#ModalEditTraining").modal('show',{backdrop: 'true'});
-					}
-				});
-			});
-			
-		// Ruangan
-		$(".open_modal").click(function(e) {
-			var m = $(this).attr("id");
-				$.ajax({
-					url: "grup_modal_edit.php",
-					type: "GET",
-					data : {id_gr: m,},
-					success: function (ajaxData){
-					$("#ModalEditGrup").html(ajaxData);
-					$("#ModalEditGrup").modal('show',{backdrop: 'true'});
-					}
-				});
-			});
 
-		// Matakuliah
-		$(".open_modal").click(function(e) {
-			var m = $(this).attr("id");
-				$.ajax({
-					url: "matakuliah_modal_edit.php",
-					type: "GET",
-					data : {Kode_Matakuliah: m,},
-					success: function (ajaxData){
-					$("#ModalEditMatakuliah").html(ajaxData);
-					$("#ModalEditMatakuliah").modal('show',{backdrop: 'true'});
-					}
-				});
-			});
+		
 			
-		// Jurusan
-		$(".open_modal").click(function(e) {
-			var m = $(this).attr("id");
-				$.ajax({
-					url: "jurusan_modal_edit.php",
-					type: "GET",
-					data : {Kode_Jurusan: m,},
-					success: function (ajaxData){
-					$("#ModalEditJurusan").html(ajaxData);
-					$("#ModalEditJurusan").modal('show',{backdrop: 'true'});
-					}
-				});
-			});
-			
-		// Jenjang
-		$(".open_modal").click(function(e) {
-			var m = $(this).attr("id");
-				$.ajax({
-					url: "jenjang_modal_edit.php",
-					type: "GET",
-					data : {Kode_Jenjang: m,},
-					success: function (ajaxData){
-					$("#ModalEditJenjang").html(ajaxData);
-					$("#ModalEditJenjang").modal('show',{backdrop: 'true'});
-					}
-				});
-			});
-			
-		// Jadwal
-		$(".open_modal").click(function(e) {
-			var m = $(this).attr("id");
-				$.ajax({
-					url: "jadwal_modal_edit.php",
-					type: "GET",
-					data : {Id_Jadwal: m,},
-					success: function (ajaxData){
-					$("#ModalEditJadwal").html(ajaxData);
-					$("#ModalEditJadwal").modal('show',{backdrop: 'true'});
-					}
-				});
-			});
+		
+
+
 		});
 	</script>
 	
@@ -350,4 +267,13 @@ include "../include/session.php";
 			$("#modal_delete").modal('show', {backdrop: 'static'});
 			document.getElementById('delete_link').setAttribute('href', delete_url);
 		}
+	</script>
+
+	<!-- Javascript Detail -->
+	<script>
+		function rm_detail(detaik_url){
+			$("modal_detail").modal('show', {backdrop: 'static'});
+			document.getElementById('detail_link'.setAttribute('href', detaik_url))
+		}
+	
 	</script>

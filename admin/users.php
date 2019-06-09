@@ -188,7 +188,7 @@ include "../include/session.php";
 											<i class="fa fa-flag"></i>
 										</div>
 										<select name="level" class="form-control">
-										<option value='admin'></option>
+										<option value='admin'>admin</option>
                     <option value='dokter'>dokter</option>
                     <option value='operator'>operator</option>
 										</select>
@@ -259,89 +259,11 @@ include "../include/session.php";
 				});
 			});
 		
-		// Mahasiswa
-		$(".open_modal").click(function(e) {
-			var m = $(this).attr("id");
-				$.ajax({
-					url: "training_modal_edit.php",
-					type: "GET",
-					data : {no_tri: m,},
-					success: function (ajaxData){
-					$("#ModalEditTraining").html(ajaxData);
-					$("#ModalEditTraining").modal('show',{backdrop: 'true'});
-					}
-				});
-			});
+		
 			
-		// Ruangan
-		$(".open_modal").click(function(e) {
-			var m = $(this).attr("id");
-				$.ajax({
-					url: "grup_modal_edit.php",
-					type: "GET",
-					data : {id_gr: m,},
-					success: function (ajaxData){
-					$("#ModalEditGrup").html(ajaxData);
-					$("#ModalEditGrup").modal('show',{backdrop: 'true'});
-					}
-				});
-			});
+		
 
-		// Matakuliah
-		$(".open_modal").click(function(e) {
-			var m = $(this).attr("id");
-				$.ajax({
-					url: "matakuliah_modal_edit.php",
-					type: "GET",
-					data : {Kode_Matakuliah: m,},
-					success: function (ajaxData){
-					$("#ModalEditMatakuliah").html(ajaxData);
-					$("#ModalEditMatakuliah").modal('show',{backdrop: 'true'});
-					}
-				});
-			});
-			
-		// Jurusan
-		$(".open_modal").click(function(e) {
-			var m = $(this).attr("id");
-				$.ajax({
-					url: "jurusan_modal_edit.php",
-					type: "GET",
-					data : {Kode_Jurusan: m,},
-					success: function (ajaxData){
-					$("#ModalEditJurusan").html(ajaxData);
-					$("#ModalEditJurusan").modal('show',{backdrop: 'true'});
-					}
-				});
-			});
-			
-		// Jenjang
-		$(".open_modal").click(function(e) {
-			var m = $(this).attr("id");
-				$.ajax({
-					url: "jenjang_modal_edit.php",
-					type: "GET",
-					data : {Kode_Jenjang: m,},
-					success: function (ajaxData){
-					$("#ModalEditJenjang").html(ajaxData);
-					$("#ModalEditJenjang").modal('show',{backdrop: 'true'});
-					}
-				});
-			});
-			
-		// Jadwal
-		$(".open_modal").click(function(e) {
-			var m = $(this).attr("id");
-				$.ajax({
-					url: "jadwal_modal_edit.php",
-					type: "GET",
-					data : {Id_Jadwal: m,},
-					success: function (ajaxData){
-					$("#ModalEditJadwal").html(ajaxData);
-					$("#ModalEditJadwal").modal('show',{backdrop: 'true'});
-					}
-				});
-			});
+
 		});
 	</script>
 	

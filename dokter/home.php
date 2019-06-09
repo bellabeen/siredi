@@ -65,7 +65,7 @@ include "../include/session.php";
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
     <!--<img src="../assets/images/<?php// echo "".$_SESSION["images"]."" ?>" class="user-image" alt="images">-->
 	<img src="../assets/images/avatar0.jpg" class="user-image" alt="images">
-    <span class="hidden-xs"><?php echo $_SESSION['nama_tra']; ?></span>
+    <span class="hidden-xs"><?php echo $_SESSION['username']; ?></span>
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
@@ -98,7 +98,7 @@ include "../include/session.php";
           <img src="../assets/images/avatar0.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Admin</p>
+          <p><?php echo $_SESSION['username']; ?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
             <div class="pull-left image">
@@ -108,10 +108,8 @@ include "../include/session.php";
           <ul class="sidebar-menu">
             <li class="header"><h4><b><center>Menu Utama</center></b></h4></li>
             <li class="active"><a href="home.php"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
-            <li><a href="users.php"><i class="fa fa-users"></i><span>User</span></a></li>
             <li><a href="rm.php"><i class="fa fa-file-pdf-o"></i><span>RekamMedis</span></a></li>
             <li><a href="obat.php"><i class="fa fa-list-ul"></i><span>Data Obat</span></a></li>
-            <li><a href="dokter.php"><i class="fa fa-medkit"></i><span>Dokter</span></a></li>
           </ul>
         </section>
     <!-- /.sidebar -->

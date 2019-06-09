@@ -1,8 +1,9 @@
 <thead>
 					<tr>
                         <th>Nomor</th>
+						<th>NIK</th>
 						<th>Nama Lengkap</th>
-						<th>Nomor Telpon</th>
+						<th>Opsi</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -18,8 +19,12 @@
 							echo "
                                 <tr>
                                     <td>$no</td>
+									<td>$pasien[nik]</td>
 									<td>$pasien[nama]</td>
-									<td>$pasien[no_telpon]</td>
+									<td>
+										<a href='detail_rm.php?page=detail&nik=$pasien[nik]' class='btn btn-info'>Detail</a>
+										<a href='#' class='btn btn-danger' onClick='confirm_delete(\"pasien_delete.php?nik=$pasien[nik]\")'>Delete</a>
+									</td>
 								</tr>";
 						}
 					?>
