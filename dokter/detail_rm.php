@@ -122,11 +122,9 @@ include "../include/session.php";
 <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-          <h1>
-            Data Record Pasien
-          </h1>
-          
+          <h1>Data Record Pasien</h1>
         </section>
+
         <!-- Main content -->
         <section class="content">
           <div class="row">
@@ -135,9 +133,7 @@ include "../include/session.php";
                 <div class="box-header">
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  	<br></br>
 
-					<tbody>
 						<?php
 						$nik = $_GET["nik"];
 						$querypasien = mysqli_query($connect, "SELECT * FROM pasien WHERE nik='$nik'");
@@ -146,7 +142,6 @@ include "../include/session.php";
 						}
 						while ($pasien = mysqli_fetch_array($querypasien)){
 							echo "
-
 							<div class='content'>
 							<table class='table-form' border='0' width='100%' cellpadding='0' cellspacing='0'>
 							<thead>
@@ -180,20 +175,88 @@ include "../include/session.php";
 									<td width='1%'>:</td>
 									<td>$pasien[no_telpon]</td>
 								 </tr>
-							</thead>";
-						}
+                </thead>
+							  ";}?>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <a href='rm.php' class='btn'>Kembali</a>
+    <a href='#'><button class='btn btn-success' type='button' data-target='#ModalAdd' data-toggle='modal'><i class='fa fa-plus'></i> Add</button></a>
+    
+    
+    <!-- Modal Popup Dosen -->
+<div id="ModalAdd" class="modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Tambah Data Record</h4>
+					</div>
+					<div class="modal-body">
+						<form action="record_add.php" name="modal_popup" enctype="multipart/form-data" method="POST">
+							<div class="form-group">
+								<label>No RekamMedis</label>
+									<div class="input-group">
+										<div class="input-group-addon">
+											<i class=""></i>
+										</div>
+										<input name="no_rm" type="text" class="form-control" placeholder="nomor rekammedis"/>
+									</div>
+							</div>
+							<div class="form-group">
+								<label>Password</label>
+									<div class="input-group">
+										<div class="input-group-addon">
+											<i class=""></i>
+										</div>
+										<input name="password" type="password" class="form-control" placeholder="password"/>
+									</div>
+              </div>
+              
+              <div class="form-group">
+								<label>Diagnosa</label>
+									<div class="input-group">
+										<div class="input-group-addon">
+											<i class=""></i>
+										</div>
+										<input name="diagnosa" type="text" class="form-control" placeholder="diagnosa"/>
+									</div>
+              </div>
+              
+              <div class="form-group">
+								<label>Obat</label>
+									<div class="input-group">
+										<div class="input-group-addon">
+											<i class=""></i>
+										</div>
+										<input name="obat" type="text" class="form-control" placeholder="obat"/>
+									</div>
+							</div>
+
+									
+									<div class="modal-footer">
+								<button class="btn btn-success" type="submit">
+									Add
+								</button>
+								<button type="reset" class="btn btn-danger"  data-dismiss="modal" aria-hidden="true">
+									Cancel
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+    <br>
+    <br>
+    <table id="data" class="table table-bordered table-striped table-scalable">
+						<?php
+							include "dt_rm.php";
 						?>
-					</tbody>
-					
-					
-						</div>
-						<a href="rm.php" class="btn">Kembali</a>
-						
-                </div><!-- /.box-body -->
-              </div><!-- /.box -->
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </section><!-- /.content -->
-	
-		</div><!-- /.content-wrapper -->
-	</div><!-- ./wrapper -->
+                  </table>
+</body>
+</html>
