@@ -28,6 +28,13 @@ include "../include/session.php";
 	<link rel="shortcut icon" type="image/icon" href="../GGP.ico">
     <!-- Tell the browser to be responsive to screen width -->
 
+    	<!-- Daterange Picker -->
+	<script src="../assets/plugins/daterangepicker/moment.min.js"></script>
+	<script src="../assets/plugins/daterangepicker/daterangepicker.js"></script>
+	<script src="../assets/plugins/select2/select2.full.min.js"></script>
+	<script src="../assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<!-- page script -->
+
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">  
     <!-- Font Awesome -->
@@ -206,17 +213,25 @@ include "../include/session.php";
 										</div>
 										<input name="no_rm" type="text" class="form-control" placeholder="nomor rekammedis"/>
 									</div>
-							</div>
-							<div class="form-group">
-								<label>Password</label>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class=""></i>
-										</div>
-										<input name="password" type="password" class="form-control" placeholder="password"/>
-									</div>
               </div>
               
+            <div class="form-group">
+              <label>Tanggal</label>
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                  <script type="text/javascript">
+                  $(function () {
+                   $('#datetimepicker1').datetimepicker({
+                     format: 'YYYY-MM-DD'
+                   });
+                  });
+                 </script>
+              </div>
+          </div>   
+          
               <div class="form-group">
 								<label>Diagnosa</label>
 									<div class="input-group">
@@ -258,5 +273,18 @@ include "../include/session.php";
 							include "dt_rm.php";
 						?>
                   </table>
+
+<!-- 
+                  <!-- DATE Javascript -->
+    <script>
+      $(function () {	
+		// Daterange Picker
+		$('#daterm').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true,
+			format: 'YYYY-MM-DD'
+		});
+  });
+    </script> -->
 </body>
 </html>
