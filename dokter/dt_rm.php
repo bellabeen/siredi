@@ -1,6 +1,7 @@
 
 <thead>
 					<tr>
+						<th>Nomor</th>
 						<th>NIK</th>
                         <th>Nomor RekamMedis</th>
 						<th>Tanggal</th>
@@ -10,13 +11,12 @@
 				</thead>
 				<tbody>
                     <?php
-						// $no=0; //variable no
+						$no=0; //variable no
 						// $kodeRm = $data['maxKode'];
 						// $noRm = (int) substr($kodeRm, 3, 3);
 						$nik = $_GET["nik"];
-						$queryrm = mysqli_query ($connect, "SELECT nik, no_rm, tanggal, diagnosa, obat FROM rm JOIN pasien USING(nik) 
+						$queryrm = mysqli_query ($connect, "SELECT nik, no_rm, tanggal, diagnosa, obat FROM rm JOIN pasien USING (nik)
 						WHERE nik='$nik'");
-						
 						if($queryrm == false){
 							die ("Terjadi Kesalahan : ". mysqli_error($connect));
 						}
@@ -25,6 +25,7 @@
 							
 							echo "
 								<tr>
+									<td>$no</td>
 									<td>$rm[nik]</td>
 									<td>$rm[no_rm]</td>
                                     <td>$rm[tanggal]</td>

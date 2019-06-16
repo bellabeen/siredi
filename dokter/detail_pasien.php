@@ -3,7 +3,7 @@
                         <th>Nomor</th>
 						<th>NIK</th>
 						<th>Nama Lengkap</th>
-						<th>Opsi</th>
+						<th>Aksi</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -23,7 +23,6 @@
 									<td>$pasien[nama]</td>
 									<td>
 										<a href='detail_rm.php?page=detail&nik=$pasien[nik]' class='btn btn-info'>Detail</a>
-										<a href='#' class='btn btn-danger' onClick='confirm_delete(\"pasien_delete.php?nik=$pasien[nik]\")'>Delete</a>
 									</td>
 								</tr>";
 						}

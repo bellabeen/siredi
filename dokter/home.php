@@ -109,7 +109,6 @@ include "../include/session.php";
             <li class="header"><h4><b><center>Menu Utama</center></b></h4></li>
             <li class="active"><a href="home.php"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
             <li><a href="rm.php"><i class="fa fa-file-pdf-o"></i><span>RekamMedis</span></a></li>
-            <li><a href="obat.php"><i class="fa fa-list-ul"></i><span>Data Obat</span></a></li>
           </ul>
         </section>
     <!-- /.sidebar -->

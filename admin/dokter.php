@@ -175,22 +175,18 @@ include "../include/session.php";
 							<div class="form-group">
 								<label>Nama Lengkap</label>
 									<div class="input-group">
-										<div class="input-group-addon">
 											<i class=""></i>
 										</div>
 										<input name="nama" type="text" class="form-control" placeholder=""/>
-									</div>
-                            </div>
+                </div>
                             
-                            <div class="form-group">
+                <div class="form-group">
 								<label>Alamat</label>
 									<div class="input-group">
-										<div class="input-group-addon">
 											<i class=""></i>
 										</div>
 										<input name="alamat" type="text" class="form-control" placeholder=""/>
-									</div>
-                            </div>
+								</div>
                           
 									
 									<!-- <div class="form-group">
@@ -222,11 +218,9 @@ include "../include/session.php";
                 <div class="form-group">
 								<label>Nomor Telpon</label>
 									<div class="input-group">
-										<div class="input-group-addon">
 											<i class=""></i>
 										</div>
 										<input name="no_telpon" type="text" class="form-control" placeholder=""/>
-									</div>
 									</div>
 									
 								<div class="form-group">
@@ -246,14 +240,12 @@ include "../include/session.php";
                             
                   <label>Jenis Dokter</label>
 									<div class="input-group">
-										<div class="input-group-addon">
 											<i class=""></i>
 										</div>
 										<select name="spesialist" class="form-control">
 										<option value='umum'>Dokter Umum</option>
 										<option value='anak'>Spesialist Anak</option>
 										</select>
-									</div>
 									</div>
 							
 									

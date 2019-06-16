@@ -195,7 +195,7 @@ include "../include/session.php";
     <a href='#'><button class='btn btn-success' type='button' data-target='#ModalAdd' data-toggle='modal'><i class='fa fa-plus'></i> Add</button></a>
     
     
-    <!-- Modal Popup Dosen -->
+    <!-- Modal Popup RecordData -->
 <div id="ModalAdd" class="modal fade" tabindex="-1" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -208,22 +208,29 @@ include "../include/session.php";
               <div class="form-group">
 								<label>NIK</label>
 									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-flag"></i>
-										</div>
-										<select name="nik" class="form-control">
-										</select>
-									</div>
+											<i class=""></i>
+                    </div>
+										
+                    <?php
+						$nik = $_GET["nik"];
+						$querypasien = mysqli_query($connect, "SELECT * FROM pasien WHERE nik='$nik'");
+						if($querypasien == false) {
+							die("Terjadi Kesalahan : ".mysqli_error($connect));
+						}
+						while ($pasien = mysqli_fetch_array($querypasien)){
+              echo "
+              <input name='nik' type='text' class='form-control' placeholder='nomor rekammedis' value=$pasien[nik] disabled>
+							  ";}?>
+										
 									</div>
               
 							<div class="form-group">
 								<label>No RekamMedis</label>
 									<div class="input-group">
-										<div class="input-group-addon">
 											<i class=""></i>
 										</div>
 										<input name="no_rm" type="text" class="form-control" placeholder="nomor rekammedis"/>
-									</div>
+									
               </div>
               
             <div class="form-group">
@@ -246,21 +253,17 @@ include "../include/session.php";
               <div class="form-group">
 								<label>Diagnosa</label>
 									<div class="input-group">
-										<div class="input-group-addon">
 											<i class=""></i>
 										</div>
 										<input name="diagnosa" type="text" class="form-control" placeholder="diagnosa"/>
-									</div>
               </div>
               
               <div class="form-group">
 								<label>Obat</label>
 									<div class="input-group">
-										<div class="input-group-addon">
 											<i class=""></i>
 										</div>
 										<input name="obat" type="text" class="form-control" placeholder="obat"/>
-									</div>
 							</div>
 
 									
