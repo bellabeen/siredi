@@ -164,13 +164,13 @@ include "../include/session.php";
 					<div class="modal-body">
 						<form action="users_add.php" name="modal_popup" enctype="multipart/form-data" method="POST">
 							<div class="form-group">
-								<label>Nomor Registrasi</label>
+								<label>Nomor Registrasi Dokter</label>
 									<div class="input-group">
-										<div class="input-group-addon">
+										
 											<i class=""></i>
 										</div>
-										<input name="no_reg" type="text" class="form-control" placeholder="nomor registrasi"/>
-									</div>
+										<input name="no_reg" type="text" class="form-control" placeholder=""/>
+									
 							</div>
 							<div class="form-group">
 								<label>Nama Lengkap</label>
@@ -178,7 +178,7 @@ include "../include/session.php";
 										<div class="input-group-addon">
 											<i class=""></i>
 										</div>
-										<input name="nama" type="text" class="form-control" placeholder="nama lengkap"/>
+										<input name="nama" type="text" class="form-control" placeholder=""/>
 									</div>
                             </div>
                             
@@ -188,38 +188,70 @@ include "../include/session.php";
 										<div class="input-group-addon">
 											<i class=""></i>
 										</div>
-										<input name="alamat" type="text" class="form-control" placeholder="alamat"/>
+										<input name="alamat" type="text" class="form-control" placeholder=""/>
 									</div>
                             </div>
-                            
-                            <div class="form-group">
-								<label>Spesialist</label>
+                          
+									
+									<!-- <div class="form-group">
+									<label>Jenis Dokter</label>
 									<div class="input-group">
 										<div class="input-group-addon">
 											<i class=""></i>
 										</div>
-										<input name="spesialist" type="text" class="form-control" placeholder="spesialist"/>
-									</div>
-                            </div>
+										<select name="spesialist" class="form-control">
+										<option value='umum'>Dokter Umum</option>
+										<option value='anak'>Spesialist Anak</option>
+										<option value='anastesi'>Spesialist Anastesi</option>
+										<option value='andrologi'>Spesialist Andrologi</option>
+										<option value='bedah'>Spesialist Bedah</option>
+										<option value='bedah_anak'>Spesialist Bedah Anak</option>
+										<option value='bedah_toraks'>Spesialist Bedah Toraks</option>
+										<option value='bedah_mulut'>Spesialist Bedah Mulut</option>
+										<option value='bedah_plastik'>Spesialist Plastik</option>
+										<option value='bedah_syaraf'>Spesialist Syaraf</option>
+										<option value='forensik'>Spesialist Forensik</option>
+										
+										<option value='jiwa'>Spesialist Jiwa dan Psikiater</option>
+										<option value='tht'>Spesialist THT</option>
+										<option value='gigi'>Spesialist Gigi</option>
+										<option value='gigi_anak'>Spesialist Gigi Anak</option>
+										<option value='kk'>Spesialist Kulit dan Kelamin</option>
+										</select> -->
                             
-                            <div class="form-group">
+                <div class="form-group">
 								<label>Nomor Telpon</label>
 									<div class="input-group">
 										<div class="input-group-addon">
 											<i class=""></i>
 										</div>
-										<input name="no_telpon" type="text" class="form-control" placeholder="nomor telpon"/>
+										<input name="no_telpon" type="text" class="form-control" placeholder=""/>
 									</div>
-                            </div>
+									</div>
+									
+								<div class="form-group">
+								<label>Jenis Kelamin</label>
+									<div class="radio-group">
+										<div class="radio-group-addon">
+											<i class=""></i>
+										</div>
+										<div class="radio-inline">
+  									<label class="radio"><input type="radio" name="jenis_kel" value="L">Laki-Laki</label>
+										</div>
+										<div class="radio-inline">
+  									<label class="radio"><input type="radio" name="jenis_kel" value="P">Perempuan</label>
+										</div>
+									</div>
+                  </div>
                             
-                            <label>Level</label>
+                  <label>Jenis Dokter</label>
 									<div class="input-group">
 										<div class="input-group-addon">
 											<i class=""></i>
 										</div>
-										<select name="jenis_kel" class="form-control">
-										<option value='L'>Laki - Laki</option>
-                                        <option value='P'>Perempuan</option>
+										<select name="spesialist" class="form-control">
+										<option value='umum'>Dokter Umum</option>
+										<option value='anak'>Spesialist Anak</option>
 										</select>
 									</div>
 									</div>

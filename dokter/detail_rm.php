@@ -204,7 +204,18 @@ include "../include/session.php";
 						<h4 class="modal-title">Tambah Data Record</h4>
 					</div>
 					<div class="modal-body">
-						<form action="record_add.php" name="modal_popup" enctype="multipart/form-data" method="POST">
+            <form action="detail_rm_add.php" name="modal_popup" enctype="multipart/form-data" method="POST">
+              <div class="form-group">
+								<label>NIK</label>
+									<div class="input-group">
+										<div class="input-group-addon">
+											<i class="fa fa-flag"></i>
+										</div>
+										<select name="nik" class="form-control">
+										</select>
+									</div>
+									</div>
+              
 							<div class="form-group">
 								<label>No RekamMedis</label>
 									<div class="input-group">
@@ -231,7 +242,7 @@ include "../include/session.php";
                  </script>
               </div>
           </div>   
-          
+
               <div class="form-group">
 								<label>Diagnosa</label>
 									<div class="input-group">
@@ -273,18 +284,6 @@ include "../include/session.php";
 							include "dt_rm.php";
 						?>
                   </table>
-
-<!-- 
-                  <!-- DATE Javascript -->
-    <script>
-      $(function () {	
-		// Daterange Picker
-		$('#daterm').daterangepicker({
-			singleDatePicker: true,
-			showDropdowns: true,
-			format: 'YYYY-MM-DD'
-		});
-  });
-    </script> -->
+                  
 </body>
 </html>
