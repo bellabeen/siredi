@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2019 at 03:07 AM
+-- Generation Time: Jun 22, 2019 at 05:23 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -37,6 +37,14 @@ CREATE TABLE `dokter` (
   `jenis_kel` enum('L','P','l','p') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `dokter`
+--
+
+INSERT INTO `dokter` (`no_reg`, `nama`, `alamat`, `spesialist`, `no_telpon`, `jenis_kel`) VALUES
+('12', 'Doket Baru', 'Kedaton', 'Spesialist Anak', '0721707147', 'L'),
+('6767114', 'Dimas Riyadi', 'Jalan Teuku Umar', 'Spesialist Anak', '089677189755', 'P');
+
 -- --------------------------------------------------------
 
 --
@@ -57,8 +65,9 @@ CREATE TABLE `pasien` (
 --
 
 INSERT INTO `pasien` (`nik`, `nama`, `umur`, `tgl_lahir`, `alamat`, `no_telpon`) VALUES
-('1871052405980003', 'Dimas Riyadi', '24', '1999-03-09', 'Jalan Pangeran Antasari Gg Langgar 1 No 5 Kedamaian , Bandar Lampung', '899173922'),
-('1871052405980005', 'Muhammad Bella Buay Nunyai', '22', '1998-05-24', 'Jalan Pangeran Antasari Gg Langgar 1 No 5 Kedamaian , Bandar Lampung', '089677189744');
+('1871052405980001', 'siapa', '17', '1999-05-09', 'Rajabasa', '08154056860'),
+('1871052405980003', 'Dimas Riyadi', '24', '1999-03-09', 'Jalan Pangeran Antasari Gg Langgar 1 No 5 Kedamaian , Bandar Lampung', '81377687766'),
+('1871052405980005', 'Muhammad Bella Buay Nunyai', '22', '1998-05-24', 'Jalan Pangeran Antasari Gg Langgar 1 No 5 Kedamaian , Bandar Lampun', '89677189744');
 
 -- --------------------------------------------------------
 
@@ -81,7 +90,14 @@ CREATE TABLE `rm` (
 
 INSERT INTO `rm` (`no_rm`, `tanggal`, `diagnosa`, `obat`, `nik`, `no_reg`) VALUES
 ('RM0001', '2019-06-15', 'Pusing Pusing', 'Parasetamol', '1871052405980003', NULL),
-('RM0002', '2019-06-15', 'Perut Mulas', 'Magg', '1871052405980005', NULL);
+('RM0002', '2019-06-15', 'Perut Mulas', 'Magg', '1871052405980005', NULL),
+('RM0003', '2019-06-16', 'Demam', 'Parasetamol', '1871052405980003', NULL),
+('', '0000-00-00', '', '', '1871052405980003', '6767114'),
+('RM0004', '0000-00-00', 'Mata Berair, Mual Mual', 'Paracetamol', '1871052405980005', '6767114'),
+('RM0005', '0000-00-00', 'Mata Berair, Mual Mual', 'Paracetamol', '1871052405980005', '6767114'),
+('RM0006', '0000-00-00', 'Panas', 'Vitamin c', '1871052405980003', '6767114'),
+('RM0007', '2019-06-17', 'Panas', 'Paracetamol', '1871052405980003', '6767114'),
+('1', '2019-06-04', 'Mual, Pusing.', 'Paracetamol', '1871052405980001', '12');
 
 -- --------------------------------------------------------
 
@@ -105,9 +121,7 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `level`) VALUES
 (10, 'dokter', 'dokter', 'dokter'),
 (14, 'operator', 'operator', 'operator'),
 (24, 'testlagi', 'coba', 'dokter'),
-(26, 'bela', 'bella', 'admin'),
-(27, '', '', ''),
-(28, '', '', '');
+(26, 'bela', 'bella', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -146,7 +160,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_user` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- Constraints for dumped tables
@@ -156,8 +170,8 @@ ALTER TABLE `user`
 -- Constraints for table `rm`
 --
 ALTER TABLE `rm`
-  ADD CONSTRAINT `rm_ibfk_1` FOREIGN KEY (`nik`) REFERENCES `pasien` (`nik`),
-  ADD CONSTRAINT `rm_ibfk_2` FOREIGN KEY (`no_reg`) REFERENCES `dokter` (`no_reg`);
+  ADD CONSTRAINT `rm_ibfk_nik` FOREIGN KEY (`nik`) REFERENCES `pasien` (`nik`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `rm_ibfk_no_reg` FOREIGN KEY (`no_reg`) REFERENCES `dokter` (`no_reg`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
