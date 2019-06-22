@@ -5,7 +5,7 @@ include "../include/session.php";
 <!DOCTYPE html>
 <html>
 <head>
-<title>Operator | RekamMedis</title>
+<title>Dokter | RekamMedis</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -109,12 +109,11 @@ include "../include/session.php";
             </div>
           </div>
           <!-- sidebar menu: : style can be found in sidebar.less -->
-          <ul class="sidebar-menu">
-						<li class="header"><h4><b><center>Manajemen Pasien</center></b></h4></li>
+          <ul class="sidebar-menu">					
+						<li class="header"><h4><b><center>Manajemen Dokter</center></b></h4></li>
             <li class="active"><a href="home.php"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
-            <li><a href="users.php"><i class="fa fa-user"></i><span>User</span></a></li>
+            <li><a href="pasien.php"><i class="fa fa-users"></i><span>Pasien</span></a></li>            
             <li><a href="dokter.php"><i class="fa fa-medkit"></i><span>Dokter</span></a></li>
-            <li><a href="pasien.php"><i class="fa fa-users"></i><span>Pasien</span></a></li>
           </ul>
         </section>
     <!-- /.sidebar -->
@@ -124,7 +123,7 @@ include "../include/session.php";
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Data Pasien
+            Data Dokter
           </h1>
           
         </section>
@@ -138,11 +137,11 @@ include "../include/session.php";
 
                 </div><!-- /.box-header -->
                 <div class="box-body">
-				<!-- <a href="#"><button class="btn btn-success" type="button" data-target="#ModalAdd" data-toggle="modal"><i class="fa fa-plus"></i> Add</button></a> -->
+				<a href="#"><button class="btn btn-success" type="button" data-target="#ModalAdd" data-toggle="modal"><i class="fa fa-plus"></i> Add</button></a>
                   <br></br>
 				  <table id="data" class="table table-bordered table-striped table-scalable">
 						<?php
-							include "detail_pasien.php";
+							include "detail_dokter.php";
 						?>
                   </table>
                 </div><!-- /.box-body -->
@@ -150,13 +149,95 @@ include "../include/session.php";
             </div><!-- /.col -->
           </div><!-- /.row -->
         </section><!-- /.content -->
+		
+<!-- Modal Popup Dosen -->
+<div id="ModalAdd" class="modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Tambah Data Dokter</h4>
+					</div>
+					<div class="modal-body">
+						<form action="dokter_add.php" name="modal_popup" enctype="multipart/form-data" method="POST">
+							<div class="form-group">
+								<label>Nomor Registrasi Dokter</label>
+									<div class="input-group">
+										
+											<i class=""></i>
+										</div>
+										<input name="no_reg" type="text" class="form-control" placeholder=""/>
+									
+							</div>
+							<div class="form-group">
+								<label>Nama Lengkap</label>
+									<div class="input-group">
+											<i class=""></i>
+										</div>
+										<input name="nama" type="text" class="form-control" placeholder=""/>
+                </div>
+                            
+                <div class="form-group">
+								<label>Alamat</label>
+									<div class="input-group">
+											<i class=""></i>
+										</div>
+										<input name="alamat" type="text" class="form-control" placeholder=""/>
+								</div>
+                            
+                <div class="form-group">
+								<label>Nomor Telpon</label>
+									<div class="input-group">
+											<i class=""></i>
+										</div>
+										<input name="no_telpon" type="text" class="form-control" placeholder=""/>
+									</div>
+									
+								<div class="form-group">
+								<label>Jenis Kelamin</label>
+									<div class="radio-group">
+										<div class="radio-group-addon">
+											<i class=""></i>
+										</div>
+										<div class="radio-inline">
+  									<label class="radio"><input type="radio" name="jenis_kel" value="L">Laki-Laki</label>
+										</div>
+										<div class="radio-inline">
+  									<label class="radio"><input type="radio" name="jenis_kel" value="P">Perempuan</label>
+										</div>
+									</div>
+                  </div>
+                            
+                  <label>Jenis Dokter</label>
+									<div class="input-group">
+											<i class=""></i>
+										</div>
+										<select name="spesialist" class="form-control">
+										<option value='Dokter Umum'>Dokter Umum</option>
+										<option value='Spesialist Anak'>Spesialist Anak</option>
+										</select>
+									</div>
+							
+									
+								<div class="modal-footer">
+								<button class="btn btn-success" type="submit">
+									Add
+								</button>
+								<button type="reset" class="btn btn-danger"  data-dismiss="modal" aria-hidden="true">
+									Cancel
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Modal Popup Dokter Edit -->
+		<div id="ModalEditDokter" class="modal fade" tabindex="-1" role="dialog"></div>
 
-		
-		
-		<!-- Modal Popup Pasien Edit -->
-		<div id="ModalEditPasien" class="modal fade" tabindex="-1" role="dialog"></div>
-		<!-- Modal Popup Pasien Detail -->
-		<div id="ModalDetailPasien" class="modal fade" tabindex="-1" role="dialog"></div>
+				<!-- Modal Popup Dokter Detail -->
+				<div id="ModalDetailDokter" class="modal fade" tabindex="-1" role="dialog"></div>
 
 		
 		<!-- Modal Popup untuk delete--> 
@@ -176,6 +257,7 @@ include "../include/session.php";
 		</div>
 	</div><!-- /.content-wrapper -->
 
+
 		<footer class="main-footer">
     		<div class="pull-right hidden-xs"></div>
     		<strong><center><?php include "../include/footer.php";?></center></strong>
@@ -185,35 +267,120 @@ include "../include/session.php";
 
 
 	
-		<!-- Javascript Edit dan Detail--> 
+
+	
+		<!-- Javascript Edit--> 
 		<script type="text/javascript">
 		$(document).ready(function () {
-
 		
-		// Pasien
+		// Dokter
 		$(".open_modal_edit").click(function(e) {
+			var m = $(this).attr("no_reg");
+				$.ajax({
+					url: "dokter_modal_edit.php",
+					type: "GET",
+					data : {no_reg: m,},
+					success: function (ajaxData){
+					$("#ModalEditDokter").html(ajaxData);
+					$("#ModalEditDokter").modal('show',{backdrop: 'true'});
+					}
+				});
+			});
+
+		// Dokter Detail
+		$(".open_modal_detail").click(function(e) {
 			var m = $(this).attr("nik");
 				$.ajax({
-					url: "pasien_modal_edit.php",
+					url: "dokter_modal_detail.php",
 					type: "GET",
-					data : {nik: m,},
+					data : {no_reg: m,},
 					success: function (ajaxData){
-					$("#ModalEditPasien").html(ajaxData);
-					$("#ModalEditPasien").modal('show',{backdrop: 'true'});
+					$("#ModalDetailDokter").html(ajaxData);
+					$("#ModalDetailDokter").modal('show',{backdrop: 'true'});
+					}
+				});
+			});
+		
+		// Mahasiswa
+		$(".open_modal").click(function(e) {
+			var m = $(this).attr("id");
+				$.ajax({
+					url: "training_modal_edit.php",
+					type: "GET",
+					data : {no_tri: m,},
+					success: function (ajaxData){
+					$("#ModalEditTraining").html(ajaxData);
+					$("#ModalEditTraining").modal('show',{backdrop: 'true'});
 					}
 				});
 			});
 			
-		// Detail Pasien
-		$(".open_modal_detail").click(function(e) {
-			var m = $(this).attr("nik");
+		// Ruangan
+		$(".open_modal").click(function(e) {
+			var m = $(this).attr("id");
 				$.ajax({
-					url: "pasien_modal_detail.php",
+					url: "grup_modal_edit.php",
 					type: "GET",
-					data : {nik: m,},
+					data : {id_gr: m,},
 					success: function (ajaxData){
-					$("#ModalDetailPasien").html(ajaxData);
-					$("#ModalDetailPasien").modal('show',{backdrop: 'true'});
+					$("#ModalEditGrup").html(ajaxData);
+					$("#ModalEditGrup").modal('show',{backdrop: 'true'});
+					}
+				});
+			});
+
+		// Matakuliah
+		$(".open_modal").click(function(e) {
+			var m = $(this).attr("id");
+				$.ajax({
+					url: "matakuliah_modal_edit.php",
+					type: "GET",
+					data : {Kode_Matakuliah: m,},
+					success: function (ajaxData){
+					$("#ModalEditMatakuliah").html(ajaxData);
+					$("#ModalEditMatakuliah").modal('show',{backdrop: 'true'});
+					}
+				});
+			});
+			
+		// Jurusan
+		$(".open_modal").click(function(e) {
+			var m = $(this).attr("id");
+				$.ajax({
+					url: "jurusan_modal_edit.php",
+					type: "GET",
+					data : {Kode_Jurusan: m,},
+					success: function (ajaxData){
+					$("#ModalEditJurusan").html(ajaxData);
+					$("#ModalEditJurusan").modal('show',{backdrop: 'true'});
+					}
+				});
+			});
+			
+		// Jenjang
+		$(".open_modal").click(function(e) {
+			var m = $(this).attr("id");
+				$.ajax({
+					url: "jenjang_modal_edit.php",
+					type: "GET",
+					data : {Kode_Jenjang: m,},
+					success: function (ajaxData){
+					$("#ModalEditJenjang").html(ajaxData);
+					$("#ModalEditJenjang").modal('show',{backdrop: 'true'});
+					}
+				});
+			});
+			
+		// Jadwal
+		$(".open_modal").click(function(e) {
+			var m = $(this).attr("id");
+				$.ajax({
+					url: "jadwal_modal_edit.php",
+					type: "GET",
+					data : {Id_Jadwal: m,},
+					success: function (ajaxData){
+					$("#ModalEditJadwal").html(ajaxData);
+					$("#ModalEditJadwal").modal('show',{backdrop: 'true'});
 					}
 				});
 			});

@@ -15,6 +15,8 @@
 						// $kodeRm = $data['maxKode'];
 						// $noRm = (int) substr($kodeRm, 3, 3);
 						$nik = $_GET["nik"];
+						// $queryrm = mysqli_query ($connect, "SELECT nik, no_rm, tanggal, diagnosa, obat FROM rm JOIN pasien ON (rm.nik = pasien.nik)
+						// WHERE nik='$nik'");
 						$queryrm = mysqli_query ($connect, "SELECT nik, no_rm, tanggal, diagnosa, obat FROM rm JOIN pasien USING (nik)
 						WHERE nik='$nik'");
 						if($queryrm == false){

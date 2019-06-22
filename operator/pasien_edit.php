@@ -10,8 +10,8 @@ $alamat         = $_POST["alamat"];
 $no_telpon      = $_POST["no_telpon"];
 
 
-if ($edit = mysqli_query($connect, "UPDATE pasien SET nik='$nik', nama='$nama', umur='$umur', tgl_lahir='$tgl_lahir', 
-alamat='$alamat', no_telpon=$no_telpon WHERE nik='$nik'")){
+if ($edit = mysqli_query($connect, "UPDATE pasien SET nik='$nik', nama='$nama', umur='$umur', tgl_lahir='$tgl_lahir', alamat='$alamat', no_telpon=$no_telpon 
+		WHERE nik='$nik'")){
 		header("Location: pasien.php");
 		exit();
 	}

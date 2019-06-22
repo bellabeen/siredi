@@ -120,8 +120,6 @@ include "../include/session.php";
 						<li class="header"><h4><b><center>Manajemen RekamMedis</center></b></h4></li>
             <li class="active"><a href="home.php"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
             <li><a href="rm.php"><i class="fa fa-file-pdf-o"></i><span>RekamMedis</span></a></li>
-            <li><a href="obat.php"><i class="fa fa-list-ul"></i><span>Data Obat</span></a></li>
-          </ul>
         </section>
     <!-- /.sidebar -->
   </aside>  
@@ -205,7 +203,7 @@ include "../include/session.php";
 					</div>
 					<div class="modal-body">
             <form action="detail_rm_add.php" name="modal_popup" enctype="multipart/form-data" method="POST">
-              <div class="form-group">
+              <!-- <div class="form-group">
 								<label>NIK</label>
 									<div class="input-group">
 											<i class=""></i>
@@ -222,7 +220,7 @@ include "../include/session.php";
               <input name='nik' type='text' class='form-control' placeholder='nomor rekammedis' value=$pasien[nik] disabled>
 							  ";}?>
 										
-									</div>
+									</div> -->
               
 							<div class="form-group">
 								<label>No RekamMedis</label>
@@ -236,7 +234,7 @@ include "../include/session.php";
             <div class="form-group">
               <label>Tanggal</label>
                 <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
+                    <input type='text' class="form-control" name="tanggal" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -257,6 +255,27 @@ include "../include/session.php";
 										</div>
 										<input name="diagnosa" type="text" class="form-control" placeholder="diagnosa"/>
               </div>
+
+
+              <div class="form-group">
+								<label>Nomor Registrasi Dokter</label>
+									<div class="input-group">
+											<i class=""></i>
+										</div>
+                    <select name="no_reg" class="form-control">
+                      <?php
+                      $querydokter = mysqli_query($connect, "SELECT * FROM dokter");
+                      if($querydokter == false) {
+                        die ("Terdapat kesalahan : ". mysqli_error($connect));
+                      }
+                      while($dokter = mysqli_fetch_array($querydokter)){
+                        echo "
+                        <option value='$dokter[no_reg]'>$dokter[no_reg]</option>";
+                      }
+                      ?>
+										</select>
+              </div>
+              
               
               <div class="form-group">
 								<label>Obat</label>
@@ -264,7 +283,28 @@ include "../include/session.php";
 											<i class=""></i>
 										</div>
 										<input name="obat" type="text" class="form-control" placeholder="obat"/>
-							</div>
+              </div>
+
+              <div class="form-group">
+              <label>NIK PASIEN</label>
+									<div class="input-group">
+											<i class=""></i>
+										</div>
+										<select name="nik" class="form-control">
+                      <?php
+                      $querynik = mysqli_query($connect, "SELECT * FROM pasien");
+                      if($querynik == false) {
+                        die ("Terdapat kesalahan : ". mysqli_error($connect));
+                      }
+                      while($nik = mysqli_fetch_array($querynik)){
+                        echo "
+                        <option value='$nik[nik]'>$nik[nik]</option>";
+                      }
+                      ?>
+										</select>
+                  </div>
+                  </div>
+                
 
 									
 									<div class="modal-footer">

@@ -115,8 +115,6 @@ include "../include/session.php";
             <li><a href="users.php"><i class="fa fa-user"></i><span>User</span></a></li>
             <li><a href="dokter.php"><i class="fa fa-medkit"></i><span>Dokter</span></a></li>
             <li><a href="pasien.php"><i class="fa fa-users"></i><span>Pasien</span></a></li>
-            <li><a href="rm.php"><i class="fa fa-file-pdf-o"></i><span>RekamMedis</span></a></li>
-            <li><a href="obat.php"><i class="fa fa-list-ul"></i><span>Data Obat</span></a></li>
           </ul>
         </section>
     <!-- /.sidebar -->
@@ -140,7 +138,6 @@ include "../include/session.php";
 
                 </div><!-- /.box-header -->
                 <div class="box-body">
-				<a href="#"><button class="btn btn-success" type="button" data-target="#ModalAdd" data-toggle="modal"><i class="fa fa-plus"></i> Add</button></a>
                   <br></br>
 				  <table id="data" class="table table-bordered table-striped table-scalable">
 						<?php

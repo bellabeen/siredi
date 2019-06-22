@@ -108,7 +108,8 @@ include "../include/session.php";
           <ul class="sidebar-menu">
             <li class="header"><h4><b><center>Menu Utama</center></b></h4></li>
             <li class="active"><a href="home.php"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
-            <li><a href="pasien.php"><i class="fa fa-users"></i><span>Pasien</span></a></li>
+            <li><a href="pasien.php"><i class="fa fa-users"></i><span>Pasien</span></a></li>            
+            <li><a href="dokter.php"><i class="fa fa-medkit"></i><span>Dokter</span></a></li>
           </ul>
         </section>
     <!-- /.sidebar -->
