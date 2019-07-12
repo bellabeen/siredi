@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2019 at 01:06 AM
+-- Generation Time: Jul 12, 2019 at 02:31 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -121,7 +121,8 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `level`) VALUES
 (10, 'dokter', 'dokter', 'dokter'),
 (14, 'operator', 'operator', 'operator'),
 (24, 'testlagi', 'coba', 'dokter'),
-(26, 'bela', 'bella', 'admin');
+(26, 'bela', 'bella', 'admin'),
+(27, 'administrator', '0eaa1efc2a98404ff71d684027b148', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -160,7 +161,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_user` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Constraints for dumped tables

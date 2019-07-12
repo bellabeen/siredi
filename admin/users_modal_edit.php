@@ -51,7 +51,7 @@ while($user = mysqli_fetch_array($queryuser)){
 										<div class="input-group-addon">
 											<i class="fa fa-id-card"></i>
 										</div>
-										<input name="password" type="text" class="form-control" value="<?php echo $user["password"]; ?>"/>
+										<input name="password" type="password" class="form-control" value=""/>
 									</div>
 							</div>
 							<div class="form-group">

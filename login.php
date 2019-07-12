@@ -60,6 +60,7 @@
       $password = stripslashes("$password");
       $username = mysqli_real_escape_string($connect, $username);
       $password = mysqli_real_escape_string($connect, $password);
+      $password = md5($password);
 
 				if($login){
 					if($username == "" || $password == ""){
