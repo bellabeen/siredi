@@ -60,7 +60,7 @@
       $password = stripslashes("$password");
       $username = mysqli_real_escape_string($connect, $username);
       $password = mysqli_real_escape_string($connect, $password);
-      $password = md5($password);
+      // $password = md5($password);
 
 				if($login){
 					if($username == "" || $password == ""){
@@ -117,7 +117,7 @@ $level    = $_POST["level"];
 
 $username = stripslashes("$username");
 $password = stripslashes("$password");
-// $level    = stripslashes("$level");
+$level    = stripslashes("$level");
 $username = mysqli_real_escape_string($connect, $username);
 $password = mysqli_real_escape_string($connect, $password);
 $query = mysqli_query($connect,"SELECT * FROM user WHERE

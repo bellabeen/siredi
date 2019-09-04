@@ -4,7 +4,7 @@ include "../include/session.php";
 
 $id_user 	    = $_POST["id_user"];
 $username	    = $_POST["username"];
-$password 		= md5($_POST["password"]);
+$password 		= $_POST["password"];
 $level 	        = $_POST["level"];
 
 if ($add = mysqli_query($connect, "INSERT INTO user VALUES ('$id_user', '$username', '$password', '$level')")){
