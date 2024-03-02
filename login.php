@@ -5,8 +5,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+        <!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
         <link rel="shortcut icon" type="image/">
         <!-- Bootstrap 3.3.7 -->
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -50,7 +50,7 @@
     </form>
 
     <?php
-    include "./include/connect.php";
+    include "include/connect.php";
 			$username= @$_POST['username'];
 			$password= @$_POST['password'];
       $login= @$_POST['login'];
@@ -108,8 +108,8 @@
 
 
 
-<!-- <?php
-include "./include/connect.php";
+<?php
+include "include/connect.php";
 session_start();
 $username = @$_POST["username"];
 $password = @$_POST["password"];
@@ -133,10 +133,10 @@ else {
     echo "<script>alert('Username dan Password salah');
     // window.location = './login.php';</script>";
 }
- ?> -->
+ ?>
 
 <?php
-include "./include/footer.php"
+include "include/footer.php"
 ?>
                 </div>
     </body>
